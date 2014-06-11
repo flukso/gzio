@@ -13,11 +13,11 @@ LIBDIR=
 LUALIB=lua
 endif
 
-CFLAGS+= -O2 -Wall -pedantic $(INCDIR)
+CFLAGS+= -fPIC -O2 -Wall -pedantic $(INCDIR)
 AR= ar rcu
 RANLIB= ranlib
 LD=gcc
-LDFLAGS+= -O -shared -fpic
+LDFLAGS+= -shared
 RM=rm -f
 LIBS= -lm -lz -l$(LUALIB)
 
