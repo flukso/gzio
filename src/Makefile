@@ -1,11 +1,17 @@
 # makefile for building the gzip file I/O library
 
 # == CHANGE THE SETTINGS BELOW TO SUIT YOUR ENVIRONMENT =======================
-LUAPATH = /usr/local/share/lua/5.1
-LUACPATH = /usr/local/lib/lua/5.1
-INCDIR = -I/usr/include/lua5.1
-LIBDIR = -L/usr/lib
-LUALIB =lua5.1
+LUAPATH= /usr/local/share/lua/5.1
+LUACPAT= /usr/local/lib/lua/5.1
+INCDIR= -I/usr/include/lua5.1
+LIBDIR= -L/usr/lib
+LUALIB=lua5.1
+
+ifeq ($(OPENWRT_BUILD),1)
+INCDIR=
+LIBDIR=
+LUALIB=lua
+endif
 
 CFLAGS+= -O2 -Wall -pedantic $(INCDIR)
 AR= ar rcu
