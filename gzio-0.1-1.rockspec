@@ -2,6 +2,7 @@ package = "gzio"
 version = "0.1-1"
 source = {
 	url = "https://github.com/flukso/gzio.git",
+	tag = "v0.1"
 }
 description = {
 	summary = "Lua gzip file I/O module",
